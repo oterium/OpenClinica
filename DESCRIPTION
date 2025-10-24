@@ -1,0 +1,236 @@
+Package: OpenClinica
+Version: 3.18-SNAPSHOT
+Title: OpenClinica Electronic Data Capture and Clinical Data Management System
+Description: OpenClinica is an open source software for Electronic Data Capture (EDC)
+    and Clinical Data Management (CDM) used to optimize clinical trial workflow in a
+    smart and secure fashion. This installation is customized and maintained by
+    Biostatech - Advice, Training & Innovation in Biostatistics, S.L.
+Authors: OpenClinica Community, Biostatech (Customization)
+License: GNU LGPL (https://www.openclinica.com/gnu-lgpl-open-source-license)
+URL: https://github.com/OpenClinica/OpenClinica
+BugReports: https://jira.openclinica.com/
+
+SystemRequirements:
+  Java: >= 7 (Java 7 or higher required)
+  Maven: >= 3.0 (Maven 3.x required for building)
+  Database: PostgreSQL 9.1+ or Oracle 10g+ (JDBC drivers included)
+  Application Server: Apache Tomcat 6.x or compatible servlet container
+  Memory: Minimum 2GB RAM recommended for production use
+  Disk Space: Minimum 1GB for application, additional space for database
+
+BuildRequirements:
+  - Maven 3.x
+  - Java Development Kit (JDK) 7 or higher
+  - Access to OpenClinica artifact repository (openclinica.jfrog.io)
+  - Access to JBoss public repository for some dependencies
+
+RuntimeRequirements:
+  - Java Runtime Environment (JRE) 7 or higher
+  - Servlet container (Tomcat 6.x recommended)
+  - PostgreSQL 9.1+ or Oracle 10g+ database
+  - SMTP server for email notifications
+  - Adequate disk space for audit trails and file attachments
+
+CoreDependencies:
+  Spring Framework: 3.2.18.RELEASE
+    - spring-tx
+    - spring-context
+    - spring-context-support
+    - spring-jdbc
+    - spring-orm
+    - spring-test
+    - spring-aspects
+    - spring-aop
+    - spring-web
+    - spring-webmvc
+    - spring-oxm
+  
+  Spring Security: 3.2.10.RELEASE
+    - spring-security-core
+    - spring-security-ldap
+    - spring-security-config
+    - spring-security-web
+    - spring-security-taglibs
+    - spring-security-acl
+    - spring-security-oauth2: 2.5.2.RELEASE
+  
+  Hibernate: 3.5.1-Final
+    - hibernate-core
+    - hibernate-annotations
+    - hibernate-validator: 4.0.2.GA
+  
+  Database & Persistence:
+    - liquibase-core: 4.29.2
+    - liquibase-plugin: 1.9.5.0
+    - postgresql JDBC: 9.1-901-1.jdbc4
+    - quartz-scheduler: 1.8.6
+    - quartz-oracle: 1.8.6
+  
+  Security-Critical Dependencies (Updated October 2024):
+    - commons-collections: 3.2.2 (CRITICAL: Fixes CVE-2015-6420, CVE-2015-7501)
+    - commons-fileupload: 1.5 (HIGH: Fixes DoS vulnerabilities)
+    - commons-io: 2.11.0 (MEDIUM: Security updates)
+    - commons-beanutils: 1.9.4 (MEDIUM: Security improvements)
+    - jackson-core-asl: 1.9.13 (HIGH: Fixes deserialization & XXE)
+    - jackson-mapper-asl: 1.9.13 (HIGH: Fixes deserialization & XXE)
+  
+  Apache Commons:
+    - commons-lang: 2.3
+    - commons-lang3: 3.4
+    - commons-dbcp: 1.4
+    - commons-validator: 1.3.1
+    - commons-digester: 1.7
+    - commons-math: 1.1
+    - commons-httpclient: 3.1 (test scope)
+  
+  XML/Document Processing:
+    - castor-core: 1.3.3
+    - castor-xml: 1.3.1
+    - XmlSchema: 1.4.7
+    - jdom: 1.1
+    - saxon: 8.7
+    - saxon-dom: 8.7
+    - fop: 1.0
+    - xmlgraphics-commons: 1.4
+  
+  Office Document Generation:
+    - poi: 3.0.1-FINAL
+    - jxl: 2.6.10
+    - itext: 2.1.2
+  
+  Web & UI:
+    - jmesa: 2.4.2-oc (OpenClinica custom version)
+    - sitemesh: 2.3
+    - jstl: 1.1.2
+    - servlet-api: 2.4 (provided)
+    - jsp-api: 2.0 (provided)
+    - struts: 1.2.4 (test scope)
+  
+  Web Services (SOAP/REST):
+    - spring-ws-core-tiger: 1.5.6
+    - spring-ws-security: 1.5.6
+    - jaxb-api: 2.1
+    - jaxb-impl: 2.1.5
+    - saaj-api: 1.3
+    - saaj-impl: 1.3.2
+  
+  Logging:
+    - slf4j-api: 1.7.6
+    - jul-to-slf4j: 1.7.6
+    - jcl-over-slf4j: 1.7.6
+    - logback-core: 1.1.2
+    - logback-classic: 1.1.2
+    - logback-access: 1.1.2
+    - janino: 2.7.5
+  
+  Monitoring & Metrics:
+    - metrics-core: 3.1.2
+    - metrics-healthchecks: 3.1.0
+    - metrics-jvm: 3.1.2
+    - speed4j: 0.12
+  
+  ODM & OpenClinica Specific:
+    - openclinica-odm: 2.2
+  
+  Utilities:
+    - joda-time: 1.6
+    - json: 20160212
+    - cglib-nodep: 2.1_3
+    - javassist: 3.8.0.GA
+    - oro: 2.0.8
+    - rome: 1.0
+    - rome-fetcher: 1.0
+    - pjl-comp-filter: 1.6.4
+  
+  Cache:
+    - ehcache-core: 2.1.0
+    - ehcache-spring-annotations: 1.1.3
+  
+  Email:
+    - mail: 1.4.5
+  
+  Testing:
+    - junit: 4.11
+    - dbunit: 2.4.9
+    - mockito-all: 1.9.5
+    - mockrunner: 0.4.2
+    - mockrunner-servlet: 0.4.2
+    - httpunit: 1.6.1
+
+Modules:
+  OpenClinica-core: Core business logic and data access layer
+  OpenClinica-web: Web application and user interface
+  OpenClinica-ws: Web services API
+
+SecurityUpdates:
+  The following critical security updates were applied in October 2024:
+  
+  1. commons-collections (3.2.1 → 3.2.2)
+     - CRITICAL: Remote Code Execution vulnerability
+     - CVE-2015-6420, CVE-2015-7501
+     - Widely exploited in real-world attacks
+  
+  2. commons-fileupload (1.3.3 → 1.5)
+     - HIGH: Denial of Service vulnerabilities
+     - Improved file upload protection
+  
+  3. Jackson (1.5.3/1.8.1 → 1.9.13)
+     - HIGH: Deserialization and XXE vulnerabilities
+     - Note: Jackson 1.x is end-of-life, migration to 2.x recommended
+  
+  4. Spring Security OAuth2 (2.0.19 → 2.5.2)
+     - HIGH: Authentication bypass and privilege escalation
+  
+  5. commons-io (1.4 → 2.11.0)
+     - MEDIUM: File handling vulnerabilities
+  
+  6. commons-beanutils (1.8.x → 1.9.4)
+     - MEDIUM: Security improvements
+  
+  7. Liquibase (4.3.5 → 4.29.2)
+     - MEDIUM: Database security improvements
+  
+  All updates maintain backward compatibility. See SECURITY_UPDATE.md for details.
+
+KnownLimitations:
+  - Jackson 1.x is end-of-life (EOL). Migration to Jackson 2.x recommended.
+  - Spring Framework 3.2.x is older. Consider upgrading to 4.x or 5.x for ongoing support.
+  - Java 7 is end-of-life. Consider migrating to Java 8 or higher.
+  - Some dependencies use older versions for compatibility reasons.
+
+BuildInstructions:
+  1. Ensure Java 7+ and Maven 3+ are installed
+  2. Configure access to OpenClinica artifact repository
+  3. Run: mvn clean install
+  4. For production build: mvn clean package -DskipTests=false
+  5. Deploy WAR files to Tomcat or compatible servlet container
+
+DatabaseSetup:
+  - Create PostgreSQL or Oracle database
+  - Configure database connection in datainfo.properties
+  - Run Liquibase migrations: mvn liquibase:update
+  - Initialize with default data as per OpenClinica installation guide
+
+Documentation:
+  - System Requirements: https://docs.openclinica.com/installation/system-requirements
+  - Installation Guide: https://github.com/OpenClinica/OpenClinica/wiki
+  - Release Notes: https://docs.openclinica.com/release-notes
+  - Security Updates: See SECURITY_UPDATE.md
+  - Customization: See BRANDING.md
+
+Support:
+  - Community Forum: http://forums.openclinica.com
+  - Issue Tracker: https://jira.openclinica.com/
+  - Extensions: https://community.openclinica.com/extensions
+  - Biostatech Support: Contact Biostatech for professional services
+
+Notes:
+  - This is a customized Biostatech edition of OpenClinica
+  - See README.md for Biostatech-specific information
+  - See RESUMEN.md for Spanish summary of recent updates
+  - See VISUAL_GUIDE.md for visual documentation
+  - All security updates applied October 2024 are backward compatible
+  - No source code changes required for dependency updates
+
+Maintained-By: Biostatech - Advice, Training & Innovation in Biostatistics, S.L.
+Last-Updated: 2025-10-24
