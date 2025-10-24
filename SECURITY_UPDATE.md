@@ -185,6 +185,6 @@ If issues are encountered, the specific dependency versions can be rolled back i
 For questions about this security update, please refer to the OpenClinica community forums or JIRA.
 
 ---
-**Last Updated**: October 24, 2025
+**Last Updated**: October 24, 2024
 **Applied By**: Security Update Process
 **Status**: Committed, Pending Build Verification
