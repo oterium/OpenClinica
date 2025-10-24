@@ -116,16 +116,16 @@
 
 	<!-- These dependencies are used by _all_ child projects -->
 	<dependencies>
-		<!-- Jackson JSON Mapper -->
+		<!-- Jackson JSON Mapper - Updated to 1.9.13 for security fixes -->
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-core-asl</artifactId>
-			<version>1.5.3</version>
+			<version>1.9.13</version>
 		</dependency>
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-mapper-asl</artifactId>
-			<version>1.5.3</version>
+			<version>1.9.13</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.annotation</groupId>
@@ -273,8 +273,7 @@
 		<dependency>
 			<groupId>org.springframework.security.oauth</groupId>
 			<artifactId>spring-security-oauth2</artifactId>
-			<version>2.0.19.RELEASE</version>
-			<!--<version>1.0.5.RELEASE</version>-->
+			<version>2.5.2.RELEASE</version>
 		</dependency>
 		<!-- HIBERNATE -->
 		<dependency>
@@ -336,7 +335,7 @@
 		<dependency>
 			<groupId>org.liquibase</groupId>
 			<artifactId>liquibase-core</artifactId>
-			<version>4.3.5</version>
+			<version>4.29.2</version>
 		</dependency>
 		<!-- Explicitly defining dependencies versions for Maven 3 -->
 		<dependency>
@@ -357,8 +356,8 @@
 		</dependency>
 		<dependency>
 			<groupId>commons-beanutils</groupId>
-			<artifactId>commons-beanutils-core</artifactId>
-			<version>1.8.3</version>
+			<artifactId>commons-beanutils</artifactId>
+			<version>1.9.4</version>
 		</dependency>
 		<dependency>
 	<groupId>io.dropwizard.metrics</groupId>
