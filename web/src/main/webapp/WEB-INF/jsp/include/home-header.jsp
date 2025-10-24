@@ -96,7 +96,7 @@ document.write('<table border="0" cellpadding="0" cellspacing="0" width="' + doc
 
 <!-- Logo -->
 
-    <div class="logo"><img src="images/Logo.gif"></div>
+    <div class="logo"><img src="images/biostatech/biostatech-logo.svg" alt="Biostatech - OpenClinica" style="height: 60px; margin: 10px 0;"></div>
 
 <!-- Main Navigation -->
 

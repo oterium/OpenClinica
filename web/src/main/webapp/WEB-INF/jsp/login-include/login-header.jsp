@@ -23,9 +23,10 @@
 <c:set var="contextPath" value="${fn:replace(pageContext.request.requestURL, fn:substringAfter(pageContext.request.requestURL, pageContext.request.contextPath), '')}" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-<title><fmt:message key="openclinica" bundle="${resword}"/></title>
+<title>OpenClinica - Biostatech Edition</title>
 
 <link rel="stylesheet" href="includes/styles.css" type="text/css">
+<link rel="stylesheet" href="includes/biostatech-branding.css" type="text/css">
 <%-- <link rel="stylesheet" href="includes/styles2.css" type="text/css">--%>
 <%-- <link rel="stylesheet" href="includes/NewNavStyles.css" type="text/css" />--%>
 <script type="text/JavaScript" language="JavaScript" src="includes/global_functions_javascript.js"></script>
@@ -79,7 +80,9 @@ onload="TabsForwardByNum(<c:out value="${tabId}"/>);<jsp:include page="../includ
                     <td valign="top">
                         <div class="disabled_header"><img src="images/spacer.gif"/></div>
                         <!-- Logo -->
-                        <div class="logo"><img src="images/Logo.gif"></div>
+                        <div class="logo">
+                            <img src="images/biostatech/biostatech-logo.svg" alt="Biostatech - OpenClinica" style="height: 60px; margin: 10px 0;">
+                        </div>
                         <!-- Main Navigation -->
                         <%-- <jsp:include page="../include/navBar.jsp"/> --%>
 
