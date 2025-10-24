@@ -28,7 +28,9 @@
                 <td class="footer_bottom" >
                 <fmt:message key="footer.license.1" bundle="${licensing}"/>
                <fmt:message key="footer.license.2" bundle="${licensing}"/>
-               <fmt:message key="footer.license.3" bundle="${licensing}"/></td>
+               <fmt:message key="footer.license.3" bundle="${licensing}"/>
+               <span style="margin-left: 10px; color: #0075A9; font-weight: 600;">| Customized by Biostatech</span>
+               </td>
 
                 <td  class="footer_bottom" style="width:200px;">
                     <c:set var="tooltip"><fmt:message key="footer.tooltip" bundle="${licensing}"/></c:set>

@@ -1,4 +1,16 @@
-# Welcome!
+# Welcome to OpenClinica - Biostatech Edition!
+
+![Biostatech Logo](web/src/main/webapp/images/biostatech/biostatech-logo.svg)
+
+## About This Installation
+
+This OpenClinica installation is customized and maintained by **Biostatech** - *Advice, Training & Innovation in Biostatistics, S.L.*
+
+Biostatech is a specialized consultancy firm providing expert services in biostatistics, clinical data management, and regulatory affairs for clinical trials and research studies.
+
+---
+
+## OpenClinica Overview
 
 OpenClinica is an open source software for Electronic Data Capture (EDC) and Clinical Data Management (CDM) used to optimize clinical trial workflow in a smart and secure fashion. Use OpenClinica to:
 
@@ -35,4 +47,18 @@ To request a feature please submit a ticket on [Jira](https://jira.openclinica.c
 ## License
 
 [GNU LGPL license](https://www.openclinica.com/gnu-lgpl-open-source-license)
+
+---
+
+## Biostatech Contact Information
+
+**Biostatech - Advice, Training & Innovation in Biostatistics, S.L.**
+
+For support, consulting, or training services related to this OpenClinica installation, please contact Biostatech.
+
+This installation is professionally managed and customized by Biostatech to meet the highest standards in clinical data management and biostatistical analysis.
+
+---
+
+*Powered by OpenClinica | Customized by Biostatech*
 
